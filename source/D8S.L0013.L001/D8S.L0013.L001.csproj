@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Main">
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <NoWarn>1573;1587;1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Package">
+    <Version>1.0.0</Version>
+    <Authors>DCoats</Authors>
+    <Copyright>Copyright © David Coats 2024</Copyright>
+    <Description>Dotnet executable types and functionality sub-library for the D8S.L0013 command invocation library.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D8S.L0013.L000\D8S.L0013.L000.csproj" />
+  </ItemGroup>
+</Project>
