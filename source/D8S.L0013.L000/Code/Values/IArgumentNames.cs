@@ -9,6 +9,11 @@ namespace D8S.L0013.L000
     public partial interface IArgumentNames : IValuesMarker
     {
         /// <summary>
+        /// <para><value>File Path</value></para>
+        /// </summary>
+        public string FilePath => "File Path";
+
+        /// <summary>
         /// <para><value>Help</value></para>
         /// </summary>
         public string Help => "Help";

@@ -29,6 +29,17 @@ namespace D8S.L0013.L000.Extensions
             return builder;
         }
 
+        public static T Add_Argument_FilePath<T>(this T builder,
+            string filePath)
+            where T : ICommandArgumentsBuilder
+        {
+            Instances.CommandInvocationOperator.Add_Argument_FilePath(
+                builder,
+                filePath);
+
+            return builder;
+        }
+
         public static T Add_SubCommandArgument<T>(this T builder,
             SubCommandArgument subCommandArgument)
             where T : ICommandArgumentsBuilder
@@ -69,11 +80,30 @@ namespace D8S.L0013.L000.Extensions
             => builder.Add_Argument(
                 Instances.CommandInvocationArguments.help);
 
+        /// <summary>
+        /// Quality-of-life overload for <see cref="Set_Command{T}(T, string)"/>.
+        /// </summary>
+        public static T Add_Command<T>(this T builder,
+            string command)
+            where T : ICommandInvocationBuilder
+            => builder.Set_Command(command);
+
         public static T Set_Command<T>(this T builder,
             string command)
             where T : ICommandInvocationBuilder
         {
             Instances.CommandInvocationOperator.Set_Command(
+                builder,
+                command);
+
+            return builder;
+        }
+
+        public static T Set_ExecutableFilePath<T>(this T builder,
+            string command)
+            where T : ICommandInvocationBuilder
+        {
+            Instances.CommandInvocationOperator.Set_ExecutableFilePath(
                 builder,
                 command);
 
@@ -94,6 +124,9 @@ namespace D8S.L0013.L000.Extensions
         public static CommandInvocation Build_CommandInvocation(this ICommandInvocationBuilder builder)
             => Instances.CommandInvocationOperator.Build_CommandInvocation(builder);
 
+        /// <summary>
+        /// Quality-of-life overload for <see cref="Build_CommandInvocation(ICommandInvocationBuilder)"/>
+        /// </summary>
         public static CommandInvocation Build(this ICommandInvocationBuilder builder)
             => builder.Build_CommandInvocation();
     }

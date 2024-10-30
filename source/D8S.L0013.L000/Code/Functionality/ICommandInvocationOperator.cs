@@ -39,6 +39,28 @@ namespace D8S.L0013.L000
                 Instances.ArgumentNames.Verb,
                 verbArgument);
 
+        /// <summary>
+        /// Quality-of-life overload for <see cref="Set_Command(ICommandInvocationBuilder, string)"/>.
+        /// </summary>
+        public void Add_Command(
+            ICommandInvocationBuilder builder,
+            string command)
+            => this.Set_Command(
+                builder,
+                command);
+
+        public void Add_Argument_FilePath(
+            ICommandArgumentsBuilder builder,
+            string filePath)
+        {
+            var pathArgument = this.Get_PathArgument(filePath);
+
+            this.Add_Argument(
+                builder,
+                Instances.ArgumentNames.FilePath,
+                pathArgument);
+        }
+
         public CommandInvocation Build_CommandInvocation(ICommandInvocationBuilder commandInvocationBuilder)
         {
             var command = commandInvocationBuilder.Command;
@@ -137,6 +159,11 @@ namespace D8S.L0013.L000
             ICommandInvocationBuilder builder,
             string command)
             => builder.Command = command;
+
+        public void Set_ExecutableFilePath(
+            ICommandInvocationBuilder builder,
+            string executableFilePath)
+            => builder.Command = executableFilePath;
 
         public void Set_WorkingDirectoryPath(
             ICommandInvocationBuilder builder,

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Main">
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <NoWarn>1573;1587;1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Package">
+    <Version>1.0.0</Version>
+    <Authors>DCoats</Authors>
+    <Copyright>Copyright © David Coats 2024</Copyright>
+    <Description>Command line operator functionality.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SafetyCone\R5T.L0066\source\R5T.L0066\R5T.L0066.csproj" />
+    <ProjectReference Include="..\D8S.L0013.L000\D8S.L0013.L000.csproj" />
+    <ProjectReference Include="..\..\..\..\SafetyCone\R5T.T0253\source\R5T.T0253.T000\R5T.T0253.T000.csproj" />
+    <ProjectReference Include="..\..\..\..\SafetyCone\R5T.F0103\source\R5T.F0103\R5T.F0103.csproj" />
+    <ProjectReference Include="..\..\..\D8S.L0002\source\D8S.L0002.L001\D8S.L0002.L001.csproj" />
+  </ItemGroup>
+</Project>
